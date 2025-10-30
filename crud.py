@@ -52,10 +52,10 @@ class Persona:
     
     def _str_(self):
         return f"""
-                rut: {self.rut} {self.digito_verificador}
+                Rut: {self.rut}-{self.digito_verificador}
                 Nombre completo: {self.nombres} {self.apellidos}
                 Fecha de nacimiento: {self.fecha_nacimiento}
-                Numero de telefono: {self.cod_area} {self.telefono}
+                Numero de telefono: +{self.cod_area} {self.telefono}
                 """       
 
 
