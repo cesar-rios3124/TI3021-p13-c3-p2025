@@ -7,8 +7,13 @@ username = os.getenv("ORACLE_USER")
 dsn = os.getenv("ORACLE_DSN") 
 password = os.getenv("ORACLE_PASSWORD")
 
-with oracledb.connect(user=username, password=password, dsn=dsn) as connection:
+with oracledb.connect(
+    user=username, 
+    password=password, 
+    dsn=dsn
+    ) as connection:
     with connection.cursor() as cursor:
         sql = "select sysdate from dual"
-        for r in cursor.execute(sql):
-            print(r)
+        for row in cursor.execute(sql):
+            for column in row:
+                print(column)
