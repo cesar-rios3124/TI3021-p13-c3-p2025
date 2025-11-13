@@ -10,6 +10,7 @@ password = os.getenv("ORACLE_PASSWORD")
 def get_connection():
     return oracledb.connect(user=username, password=password, dsn=dsn)
 
+
 def create_table_persona():
     query = (
     "CREATE TABLE personas ("
@@ -21,6 +22,7 @@ def create_table_persona():
     "numero_telefono VARCHAR2(50)"
     ")"
 )
+
     try:
         with get_connection() as connection:
             with connection.cursor() as cursos:
@@ -29,3 +31,4 @@ def create_table_persona():
     except oracledb.DatabaseError as error:
         print(f"No se pudo crear la tabla: {error}")
 
+ 
