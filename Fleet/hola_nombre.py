@@ -1,9 +1,9 @@
-# ESTE EJEMPLO VA A ABARCAR 
-# El uso de imputs, LABELS Y BOTONES
-# PARA FAMILIARIZARSE QUE COSAS BASICAS 
-# DE FUNCIONALIDAD PODEMOS LOGAR CON FLET
+# ESTE EJEMPLO VA A ABARCAR
+# EL USO DE INPUTS, LABELS Y BOTONES
+# PARA FAMILIARZARSE QUE COSAS BASICAS
+# DE FUNCIONALIDAD PODEMOS LOGRAR CON FLET
 
-# Paso 1. importar flet
+# Paso 1. Importar flet
 import flet as ft
 
 # Paso 2. Crear la clase de la App
@@ -14,7 +14,7 @@ class App:
 
         self.input_nombre = ft.TextField( hint_text="Ingresa tu nombre" )
         self.button_saludar = ft.Button( text="Saludar", on_click=self.handle_saludo )
-        self.text_saludo = ft.Text( value="")
+        self.text_saludo = ft.Text( value="" )
 
         self.build()
 
@@ -27,9 +27,9 @@ class App:
         self.page.update()
 
     def handle_saludo(self, e):
-        nombre = ( self.input_nombre.value or "").strip()
+        nombre = (self.input_nombre.value or "").strip()
         if nombre:
-            self.text_saludo.value = f"Hola, {nombre} "
+            self.text_saludo.value = f"Hola, {nombre}"
         else:
             self.text_saludo.value = "Ingrese un nombre"
         self.page.update()
